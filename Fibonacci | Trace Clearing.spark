@@ -1,0 +1,16 @@
+# Add this code to computer called "Fibonacci"
+
+ClearText()
+Print("RAIN Trace Clearing Application ")
+Print("* * * * * * * * * *")
+
+# Main Function
+
+DisconnectAll()
+clearTrace("connectionName")
+string clearTrace(string connectionName)
+    number id = -1
+    id = Connect(connectionName)
+    id.ClearText()
+    Print("Successfuly cleared the evidence!")
+end
