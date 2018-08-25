@@ -1,0 +1,16 @@
+# (C) RainOS
+# Automatically upgrades every PC
+
+
+SetMhz(500)
+array computerapi = []
+
+Append(computerapi, "internet")
+Append(computerapi, "floppy")
+Append(computerapi, "door")
+Append(computerapi, "arcade")
+Append(computerapi, "memory")
+
+loop x in computerapi
+    EnableAPI(x)
+end
