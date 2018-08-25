@@ -1,0 +1,102 @@
+ClearText()
+Print("Rain OS v 0.8.0.0")
+Print("* * * * * * * * * *")
+Print("Released under The GNU")
+Print("General Public License v3.0")
+Print("===========================")
+
+var networkComputer1 = Connect("Lodge1_Room1_Computer8")
+var networkComputer2 = Connect("Lodge_Room1_ComputerTerminalBoard1_ComputerTerminalBoard1_1")
+var networkComputer3 = Connect("Fibonacci")
+var networkComputer4 = Connect("Lodge_Room1_MediumSewerComputer_MediumSewerComputer_1")
+var networkComputer5 = Connect("Lodge_Room1_PillarComputer_PillarComputer_1")
+
+array network = []
+Append(network, "RAIN Local Data Storage")
+Append(network, "RAIN Door Lock/Unlock")
+Append(network, "RAIN Trace Clearing Application")
+Append(network, "RAIN Floppy Disk Reader")
+Append(network, "RAIN Bruteforce Unlocker")
+
+array menu = []
+Append(menu, "1-Add Data to Storage")
+Append(menu, "2-Erase Data from Storage")
+Append(menu, "3-Network Door Locker")
+Append(menu, "4-Network Door Unlocker")
+Append(menu, "5-Bruteforce Door Unlocker")
+Append(menu, "6-Trace Clearing Application")
+Append(menu, "7-Credit Card Account")
+
+loop x in menu
+	Print(x)
+	Sleep(0.25)
+end
+
+    
+loop
+    var cmd = Input("> ")
+        
+    if cmd == "network"
+        Print("List of computers on network")
+        Print("============================")
+        Print(network[0])
+        Print(network[1])
+        Print(network[2])
+        Print(network[3])
+        Print(network[4])
+        
+# RAIN Local Data Storage | Add/Erase Data
+
+    else if cmd == "1"
+		var key = Input("Key: ")
+		var data = Input("Data: ")
+		networkComputer1.AddData(key, data)
+		Print("Data saved successfully to storage!")
+		
+	else if cmd == "2"
+		var key = Input("Key: ")
+		networkComputer1.EraseData(key)
+		Print("Data erased succesfully from storage!")
+
+# RAIN Door Lock/Unlock
+
+    else if cmd == "3"
+        var lockName = Input("Door: ")
+        networkComputer2.lockDoor(lockName)
+        Print("Door locked successfully!")
+    
+    else if cmd == "4"
+        var unlockName = Input("Door: ")
+        networkComputer2.unlockDoor(unlockName)
+        Print("Door unlocked successfully!")
+
+# RAIN Trace Clearing Program
+
+    else if cmd == "6"
+        var connectionName = Input("Target: ")
+        networkComputer3.clearTrace(connectionName)
+        Print("Trace cleared with 0 errors")
+        
+# Changing Credit Card Account Balance
+
+    else if cmd == "7"
+        var computer = Connect("FinanceComputer")
+        var addMoney = Input("Transaction: ")
+        computer.ChangeBalance(GetUser(), addMoney)
+        var balance = computer.GetBalanceForPerson(GetUser())
+        Print("New account balance is " + balance + "$")
+    
+# Bruteforce Opening Locked Doors
+
+    else if cmd == "5"
+        var connectDoor = Input("Target Door: ")
+        loop x from 1 to 99999
+            if Unlock(connectDoor) == 1
+                break
+            else
+                x = x + 1
+                Print(x)
+            end
+        end
+    end
+end
