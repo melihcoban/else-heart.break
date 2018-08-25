@@ -51,3 +51,7 @@ var networkComputer5 = Connect("Lodge_Room1_PillarComputer_PillarComputer_1")
 
 - Everybody probably figured this one out but I'll add it anyway. It modifies to Modifier so you can change the code of everything.
 
+### Extractor
+
+- When you scan a new item it automatically copies the content to clipboard. It's pretty handy!
+
