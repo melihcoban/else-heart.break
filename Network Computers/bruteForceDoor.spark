@@ -1,0 +1,13 @@
+Print("RainOS Brute-Force Door")
+
+number id = -1
+#var connectionName = Input("Target Door: ")
+string bruteDoor(string connectionName)
+    loop x from 1 to 99999
+        if x == Unlock(connectionName)
+        else
+        x = x+1
+        Print(x)
+    end
+end
+end
