@@ -1,0 +1,39 @@
+# Add this to computer called "Lodge1_Room1_Computer8"
+
+ClearText()
+Print("RAIN Local Data Storage ")
+Print("* * * * * * * * * *")
+
+loop
+    var cmd = Input("> ")   
+
+# Local Storage (Load Data)
+    if cmd == "load data"
+        Print("Local Storage")
+        Print("==============")
+        var key = Input("Key: ")
+        Print(LoadMemory(key))
+
+# Local Storage (Browse Data)
+    else if cmd == "browse data"
+        OnBrowse()
+        string OnBrowse()
+            Print("Local Storage")
+            Print("=============")
+            Print("/root")
+            Print(GetMemories())
+        end
+    end
+end
+
+# Adding Data From Network
+        AddData("key", "data")
+        string AddData(string key, string data)
+            SaveMemory(key, data)
+        end
+        
+# Erasing Data From Network
+        EraseData("key")
+        string EraseData(string key)  
+            EraseMemory(key)
+        end
