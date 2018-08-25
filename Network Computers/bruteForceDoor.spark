@@ -1,3 +1,5 @@
+# Add this to computer called "Lodge_Room1_PillarComputer_PillarComputer_1"
+
 Print("RainOS Brute-Force Door")
 
 number id = -1
