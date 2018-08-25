@@ -1,0 +1,23 @@
+# Add this to computer called "Lodge_Room1_ComputerTerminalBoard1_ComputerTerminalBoard1_1"
+
+ClearText()
+Print("RAIN Door Lock/Unlock ")
+Print("* * * * * * * * * *")
+
+loop
+    var cmd = Input("> ")
+    
+# Main Functions
+
+    if cmd == "lock"
+        lockDoor("lockName")
+        string lockDoor(string lockName)
+            Lock(lockName)
+        end
+    else if cmd == "unlock"
+        unlockDoor("unlockName")
+        string unlockDoor(string unlockName)
+            Unlock(unlockName)
+        end
+    end
+end
