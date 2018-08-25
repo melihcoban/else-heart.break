@@ -1,0 +1,6 @@
+Say("Extracting...")
+
+string name = GetName()
+
+Say(name)
+CopyToClipboard(name)
